@@ -1,16 +1,17 @@
-
-
-EXEC = play/test
+EXEC = test
 FILE = $(EXEC)
-OBJECT = Test.o 
+OBJECT = src/Test.o src/glad.o
 
 CFLAGS = -g
-OPENGLFLAGS = -lglfw -lGL -lGLEW
+OPENGLFLAGS = -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+INCLUDE = -Iinclude
+SRC = src/Test.c src/glad.c
 
 $(EXEC): $(OBJECT)
-	@mkdir -p play
 	gcc $(OBJECT) $(CFLAGS) -o $(FILE) $(OPENGLFLAGS)
-	./$(FILE)
+
+src/%.o: src/%.c
+	gcc -c $< $(CFLAGS) $(INCLUDE) -o $@
 
 clean:
 	rm $(OBJECT) $(FILE) 
@@ -20,7 +21,3 @@ run:
 
 rungdb:
 	gdb ./$(FILE)
-
-
-
-#It work like would work if all files have changes and we need all remake -B

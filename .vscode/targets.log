@@ -1,0 +1,417 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Oct 12 01:05:22 2024
+
+# Variables
+
+# environment
+JAVA_HOME = /home/go/.jenv/versions/temurin64-21.0.3
+# environment
+GDK_BACKEND = x11
+# environment
+MEMORY_PRESSURE_WRITE = c29tZSAyMDAwMDAgMjAwMDAwMAA=
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 8)
+SRC = src/Test.c src/glad.c
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+JENV_FORCEJAVAHOME = true
+# environment
+GNOME_KEYRING_CONTROL = /run/user/1000/keyring
+# environment
+SNAP_LAUNCHER_ARCH_TRIPLET = x86_64-linux-gnu
+# environment
+LC_NAME = el_GR.UTF-8
+# environment
+LC_NUMERIC = el_GR.UTF-8
+# makefile (from 'Makefile', line 3)
+OBJECT = src/Test.o src/glad.o
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# environment
+VSCODE_CWD = /home/go/Desktop/C/Graphics/Math-OpenGL
+# environment
+WINDOWPATH = 2
+# environment
+LC_ADDRESS = el_GR.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/172/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/go/Desktop/C/Graphics/Math-OpenGL
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /home/go/snap/code/172/.local/share:/home/go/snap/code/172:/snap/code/172/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+SNAP_EUID = 1000
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/go/.config/Code/CachedData/384ff7382de624fb94dbaf6da11977bba1ecd427
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# default
+.LOADED := 
+# environment
+JENV_FORCEJDKHOME = true
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
+# environment
+GNOME_TERMINAL_SERVICE = :1.131
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/go/Desktop/C/Graphics/Math-OpenGL
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_PID = 8401
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3833,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3833
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'Makefile', line 1)
+EXEC = test
+# environment
+VSCODE_NLS_CONFIG = {"userLocale":"en","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/snap/code/172/usr/share/code/resources/app/out/nls.messages.json","locale":"en","availableLanguages":{}}
+# makefile (from 'Makefile', line 7)
+INCLUDE = -Iinclude
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GTK_PATH = /snap/code/172/usr/lib/x86_64-linux-gnu/gtk-3.0
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/go/.cache/dotnet_bundle_extract
+# environment
+SHLVL = 1
+# environment
+JENV_LOADED = 1
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/228df846_e12d_494a_97b9_68487430c536
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+SNAP_COOKIE = qv2CWYNC4bkUno9pfmCWtxt2McO_GgbTz5NnmlKXwJ8Giofz54Mv
+# environment
+PATH = /home/go/.jenv/shims:/home/go/.jenv/bin:/home/go/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/go/.dotnet/tools:/home/go/maven/apache-maven-3.9.7/bin
+# default
+MAKEFILES := 
+# environment
+LANGUAGE = en_US:en
+# environment
+LC_MONETARY = el_GR.UTF-8
+# automatic
+^F = $(notdir $^)
+# environment
+SNAP_USER_COMMON = /home/go/snap/code/common
+# environment
+LC_TIME = el_GR.UTF-8
+# environment
+SNAP = /snap/code/172
+# environment
+JENV_SHELL = bash
+# environment
+SNAP_REVISION = 172
+# environment
+SNAP_REAL_HOME = /home/go
+# environment
+USERNAME = go
+# environment
+LC_TELEPHONE = el_GR.UTF-8
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# automatic
+?F = $(notdir $?)
+# environment
+GTK_IM_MODULE_FILE = /home/go/snap/code/common/.cache/immodules/immodules.cache
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 6)
+OPENGLFLAGS = -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+# automatic
++F = $(notdir $+)
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+LOCPATH = /snap/code/172/usr/lib/locale
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS_VSCODE_SNAP_ORIG = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+LOGNAME = go
+# environment
+SNAP_ARCH = amd64
+# makefile
+.DEFAULT_GOAL := test
+# environment
+SYSTEMD_EXEC_PID = 4023
+# environment
+DISPLAY = :1
+# environment
+USER = go
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# environment
+SNAP_DATA = /var/snap/code/172
+# environment
+SNAP_CONTEXT = qv2CWYNC4bkUno9pfmCWtxt2McO_GgbTz5NnmlKXwJ8Giofz54Mv
+# environment
+DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
+# environment
+LC_MEASUREMENT = el_GR.UTF-8
+# environment
+LC_PAPER = el_GR.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'Makefile', line 5)
+CFLAGS = -g
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SNAP_UID = 1000
+# environment
+COLORTERM = truecolor
+# environment
+XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/go/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+GIO_MODULE_DIR = /home/go/snap/code/common/.cache/gio-modules
+# environment
+VSCODE_DOTNET_INSTALL_TOOL_ORIGINAL_HOME = /home/go
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+GSM_SKIP_SSH_AGENT_WORKAROUND = true
+# makefile (from 'Makefile', line 2)
+FILE = $(EXEC)
+# environment
+HOME = /home/go
+# environment
+QT_IM_MODULE = ibus
+# environment
+JDK_HOME = /home/go/.jenv/versions/temurin64-21.0.3
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-dd498937-1.94-main.sock
+# environment
+TERM = xterm-256color
+# environment
+GTK_EXE_PREFIX = /snap/code/172/usr
+# environment
+SNAP_NAME = code
+# environment
+GSETTINGS_SCHEMA_DIR = /home/go/snap/code/172/.local/share/glib-2.0/schemas
+# environment
+PAPERSIZE = a4
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# environment
+SNAP_VERSION = 384ff738
+# default
+SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 7600
+# environment
+SNAP_COMMON = /var/snap/code/common
+ 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+SNAP_USER_DATA = /home/go/snap/code/172
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = ubuntu
+# environment
+LC_IDENTIFICATION = el_GR.UTF-8
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+JRE_HOME = /home/go/.jenv/versions/temurin64-21.0.3
+# variable set hash-table stats:
+# Load=151/1024=15%, Rehash=0, Collisions=20/183=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src (device 66306, inode 15743544): No files, no impossibilities so far.
+# . (device 66306, inode 15743160): 9 files, no impossibilities.
+
+# 9 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+src/%.o: src/%.c
+#  recipe to execute (from 'Makefile', line 14):
+	gcc -c $< $(CFLAGS) $(INCLUDE) -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+rungdb:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	gdb ./$(FILE)
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2024-10-12 01:04:44.73733545
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	rm $(OBJECT) $(FILE) 
+
+# Not a target:
+src/Test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	./$(FILE)
+
+# Not a target:
+src/glad.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test: src/Test.o src/glad.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 11):
+	gcc $(OBJECT) $(CFLAGS) -o $(FILE) $(OPENGLFLAGS)
+
+# files hash-table stats:
+# Load=10/1024=1%, Rehash=0, Collisions=0/22=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 22 / storage = 172 B / avg = 7 B
+# current buf: size = 8162 B / used = 172 B / count = 22 / avg = 7 B
+
+# strcache performance: lookups = 31 / hit rate = 29%
+# hash-table stats:
+# Load=22/8192=0%, Rehash=0, Collisions=0/31=0%
+# Finished Make data base on Sat Oct 12 01:05:22 2024
+
+ 
