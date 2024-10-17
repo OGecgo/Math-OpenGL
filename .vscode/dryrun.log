@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/go/Desktop/C/Graphics/Math-OpenGL'
 gcc -c src/Test.c -g -Iinclude -o src/Test.o
 gcc -c src/glad.c -g -Iinclude -o src/glad.o
