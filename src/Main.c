@@ -4,7 +4,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "renderer/ShaderProgram.h"
 
+void properties();
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(GLFWwindow *window);
+int testCompilationShader(unsigned int vertexShader);
+float* returnTringlePoints();
+float* returnTringleCollor();
+unsigned int* returnTringleIndex();
+void rendering(GLFWwindow* window);
+
+
+int main(){
+
+    properties();
+    GLFWwindow* window = glfwCreateWindow(1330, 630, "Shaders", NULL, NULL);
+    if (window == NULL){
+        printf("Failed to create GLFW window\n");
+        glfwTerminate();
+        return -1;
+    }
+    
+    glfwMakeContextCurrent(window);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+        printf("Failed to initialize GLAD\n");
+        return -1;
+    }  
+
+    
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); 
+    rendering(window);
+
+    glfwTerminate();
+
+    return 0;
+}
 
 void properties(){
     glfwInit();
@@ -22,16 +58,7 @@ void processInput(GLFWwindow *window){
         glfwSetWindowShouldClose(window, 1);
 }
 
-int testCompilationShader(unsigned int vertexShader){
-    int  success;
-    char infoLog[512];
-    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
 
-    if(!success){
-        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-        printf("ERROR::SHADER::VERTEX::COMPILATION_FAILED\n%s\n", infoLog);
-    }
-}
 
 float* returnTringlePoints(){
     float* vertices = (float*)malloc((9 + 3) * sizeof(float));
@@ -51,10 +78,10 @@ float* returnTringleCollor(){
     if (vertices == NULL) return NULL;
 
     vertices[0] = 1.0f; vertices[1] = 0.0f; vertices[2] = 0.0f;
-    vertices[3] = .0f; vertices[4] = 1.0f; vertices[5] = 0.0f;
-    vertices[6] = 1.0f; vertices[7] = 0.0f; vertices[8] = 1.0f;
+    vertices[3] = 0.0f; vertices[4] = 0.0f; vertices[5] = 0.0f;
+    vertices[6] = 0.0f; vertices[7] = 0.0f; vertices[8] = 0.0f;
 
-    vertices[9] = 1.0f; vertices[10] = 0.0f; vertices[11] = 0.0f;
+    vertices[9] = 1.0f; vertices[10] = 1.0f; vertices[11] = 1.0f;
 
     return vertices;
 }
@@ -70,7 +97,7 @@ unsigned int* returnTringleIndex(){
 }
 
 //---------------------------------SHADERS---------------------------------
-const char *vertexShaderSource = "#version 330 core\n"
+char *vertexShaderSource = "#version 330 core\n"
     "layout (location = 0) in vec3 aPos;\n"
     "layout (location = 1) in vec3 aColor;\n"
     "out vec3 ourColor;\n"
@@ -79,45 +106,17 @@ const char *vertexShaderSource = "#version 330 core\n"
     "   gl_Position = vec4(aPos, 1.0);\n"
     "}\0";
 
-const char *fragmentShaderSource = "#version 330 core\n"
+char *fragmentShaderSource = "#version 330 core\n"
     "in vec3 ourColor;\n"
     "out vec4 FragColor;\n"
     "void main(){\n"
     "   FragColor = vec4(ourColor, 1.0);\n"
     "}\0";
 
-        
-unsigned int shaderTransferAndUnion(){
-    //vertex shader
-    unsigned int vertexShader;
-    vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
+void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrributes object EBO element buffer object
 
-    //fragment shader
-    unsigned int fragmentShader;
-    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
+    ShaderProgram(vertexShaderSource, fragmentShaderSource);
 
-    //union of shaders (linking)
-    unsigned int shaderProgram;
-    shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-
-    testCompilationShader(vertexShader);
-
-    //delete shaders
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
-    return shaderProgram;
-}
-
-unsigned int shaderTransfear(){
-    
     //------------------transfare shaders to gpu------------------
     //ponits
     unsigned int pointsVBO;
@@ -146,14 +145,6 @@ unsigned int shaderTransfear(){
     glBindBuffer(GL_ARRAY_BUFFER, colorsVBO);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL); //make data
 
-    return VAO;
-}
-
-void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrributes object EBO element buffer object
-
-    unsigned int shaderProgram = shaderTransferAndUnion();
-    unsigned int VAO = shaderTransfear();
-
     //------------------indexing bufers------------------
     unsigned int EBO; 
     glGenBuffers(1, &EBO);
@@ -169,7 +160,7 @@ void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrribu
         //rendering commands here
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(shaderProgram);//use shader
+        useShaderProgram();//use shader
         glBindVertexArray(VAO);//use vertex atrributes object #10 objects 10 vao
         //glDrawArrays(GL_TRIANGLES, 0, 3); //draw VAO
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); //draw with EBO
@@ -183,30 +174,3 @@ void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrribu
 }
  
 
-int main(){
-
-    properties();
-    GLFWwindow* window = glfwCreateWindow(1330, 630, "Shaders", NULL, NULL);
-    if (window == NULL){
-        printf("Failed to create GLFW window\n");
-        glfwTerminate();
-        return -1;
-    }
-    
-    glfwMakeContextCurrent(window);
-
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-        printf("Failed to initialize GLAD\n");
-        return -1;
-    }  
-
-    
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); 
-    shaderTransferAndUnion();
-    shaderTransfear(); 
-    rendering(window);
-
-    glfwTerminate();
-
-    return 0;
-}

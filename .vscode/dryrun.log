@@ -1,7 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/go/Desktop/C/Graphics/Math-OpenGL'
-gcc -c src/Test.c -g -Iinclude -o src/Test.o
-gcc -c src/glad.c -g -Iinclude -o src/glad.o
-gcc src/Test.o src/glad.o -g -o test -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+gcc -c src/renderer/ShaderProgram.c -g -Iinclude -o src/renderer/ShaderProgram.o
+gcc src/Main.o src/glad.o src/renderer/ShaderProgram.o -g -o test -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+rm src/Main.o src/glad.o src/renderer/ShaderProgram.o
 make: Leaving directory '/home/go/Desktop/C/Graphics/Math-OpenGL'
  

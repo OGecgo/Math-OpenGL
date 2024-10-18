@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Oct 18 01:22:41 2024
+# Make data base, printed on Fri Oct 18 16:03:43 2024
 
 # Variables
 
@@ -33,7 +35,7 @@ LC_NAME = el_GR.UTF-8
 # environment
 LC_NUMERIC = el_GR.UTF-8
 # makefile (from 'Makefile', line 3)
-OBJECT = src/Test.o src/glad.o
+OBJECT = src/Main.o src/glad.o src/renderer/ShaderProgram.o
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
@@ -64,8 +66,6 @@ PWD = /home/go/Desktop/C/Graphics/Math-OpenGL
 XDG_DATA_DIRS = /home/go/snap/code/172/.local/share:/home/go/snap/code/172:/snap/code/172/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 SNAP_EUID = 1000
-# environment
-OLDPWD = /home/go
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -85,7 +85,7 @@ JENV_FORCEJDKHOME = true
 # environment
 MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
 # environment
-GNOME_TERMINAL_SERVICE = :1.97
+GNOME_TERMINAL_SERVICE = :1.95
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -94,6 +94,8 @@ CURDIR := /home/go/Desktop/C/Graphics/Math-OpenGL
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -113,13 +115,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 5645
+VSCODE_PID = 5530
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3964,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3964
+SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3857,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3857
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,7 +155,7 @@ SHLVL = 1
 # environment
 JENV_LOADED = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c7fe2332_1d6c_45fb_8381_9a17960dba63
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/83f1ae42_71d3_4d05_824d_2438e8e86d2b
 # environment
 MAKELEVEL := 0
 # default
@@ -217,7 +219,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := test
 # environment
-SYSTEMD_EXEC_PID = 4134
+SYSTEMD_EXEC_PID = 4024
 # environment
 DISPLAY = :1
 # environment
@@ -252,6 +254,8 @@ XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG = /etc/xdg/xdg-ubuntu:/etc/xdg
 GDK_PIXBUF_MODULE_FILE = /home/go/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
 GIO_MODULE_DIR = /home/go/snap/code/common/.cache/gio-modules
+# environment
+VSCODE_DOTNET_INSTALL_TOOL_ORIGINAL_HOME = /home/go
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -296,9 +300,6 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 VTE_VERSION = 7600
 # environment
 SNAP_COMMON = /var/snap/code/common
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
@@ -314,7 +315,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # environment
 JRE_HOME = /home/go/.jenv/versions/temurin64-21.0.3
 # variable set hash-table stats:
-# Load=150/1024=15%, Rehash=0, Collisions=19/182=10%
+# Load=151/1024=15%, Rehash=0, Collisions=20/183=11%
 
 # Pattern-specific Variable Values
 
@@ -323,14 +324,14 @@ JRE_HOME = /home/go/.jenv/versions/temurin64-21.0.3
 # Directories
 
 # src (device 66306, inode 15743544): No files, no impossibilities so far.
-# . (device 66306, inode 15743160): 9 files, no impossibilities.
+# . (device 66306, inode 15743160): 7 files, no impossibilities.
 
-# 9 files, no impossibilities in 2 directories.
+# 7 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 src/%.o: src/%.c
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 15):
 	gcc -c $< $(CFLAGS) $(INCLUDE) -o $@
 
 # 1 implicit rules, 0 (0.0%) terminal.
@@ -340,13 +341,13 @@ rungdb:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 23):
+#  recipe to execute (from 'Makefile', line 24):
 	gdb ./$(FILE)
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-10-12 01:04:44.73733545
+#  Last modified 2024-10-18 16:03:13.865571822
 #  File has been updated.
 #  Successfully updated.
 
@@ -354,14 +355,8 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
+#  recipe to execute (from 'Makefile', line 18):
 	rm $(OBJECT) $(FILE) 
-
-# Not a target:
-src/Test.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -380,7 +375,7 @@ run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
+#  recipe to execute (from 'Makefile', line 21):
 	./$(FILE)
 
 # Not a target:
@@ -389,27 +384,40 @@ src/glad.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-test: src/Test.o src/glad.o
+# Not a target:
+src/renderer/ShaderProgram.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test: src/Main.o src/glad.o src/renderer/ShaderProgram.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 11):
 	gcc $(OBJECT) $(CFLAGS) -o $(FILE) $(OPENGLFLAGS)
+	rm $(OBJECT)
+
+# Not a target:
+src/Main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/22=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/24=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 165 B / avg = 7 B
-# current buf: size = 8162 B / used = 165 B / count = 21 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 184 B / avg = 8 B
+# current buf: size = 8162 B / used = 184 B / count = 21 / avg = 8 B
 
-# strcache performance: lookups = 31 / hit rate = 32%
+# strcache performance: lookups = 30 / hit rate = 30%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/31=0%
-# Finished Make data base on Fri Oct 18 01:22:41 2024
+# Load=21/8192=0%, Rehash=0, Collisions=0/30=0%
+# Finished Make data base on Fri Oct 18 16:03:43 2024
 
  
