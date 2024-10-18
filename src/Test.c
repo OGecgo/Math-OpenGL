@@ -34,36 +34,39 @@ int testCompilationShader(unsigned int vertexShader){
 }
 
 float* returnTringlePoints(){
-    // Выделяем память под 9 float-ов
-    float* vertices = (float*)malloc(9 * sizeof(float));
-    if (vertices == NULL) {
-        // Если выделение памяти не удалось
-        return NULL;
-    }
+    float* vertices = (float*)malloc((9 + 3) * sizeof(float));
+    if (vertices == NULL) return NULL;
 
-    // Заполняем массив цветами
-    vertices[0] = -0.5f; vertices[1] = -0.5f; vertices[2] = 0.0f;
-    vertices[3] =  0.5f; vertices[4] = -0.5f; vertices[5] = 0.0f;
-    vertices[6] =  0.0f; vertices[7] =  0.5f; vertices[8] = 0.0f;
+    vertices[0] = 0.5f; vertices[1] = 0.5f; vertices[2] = 0.0f;
+    vertices[3] = 0.5f; vertices[4] = -0.5f; vertices[5] = 0.0f;
+    vertices[6] = -0.5f; vertices[7] =  -0.5f; vertices[8] = 0.0f;
 
+    vertices[9] =  -0.5f; vertices[10] = 0.5f; vertices[11] = 0.0f;
 
-    return vertices;  // Возвращаем указатель на выделенную память
+    return vertices;
 }
 
 float* returnTringleCollor(){
-    // Выделяем память под 9 float-ов
-    float* vertices = (float*)malloc(9 * sizeof(float));
-    if (vertices == NULL) {
-        // Если выделение памяти не удалось
-        return NULL;
-    }
+    float* vertices = (float*)malloc((9 + 3) * sizeof(float));
+    if (vertices == NULL) return NULL;
 
-    // Заполняем массив координатами
     vertices[0] = 1.0f; vertices[1] = 0.0f; vertices[2] = 0.0f;
-    vertices[3] = 0.0f; vertices[4] = 1.0f; vertices[5] = 0.0f;
-    vertices[6] = 0.0f; vertices[7] = 0.0f; vertices[8] = 1.0f;
+    vertices[3] = .0f; vertices[4] = 1.0f; vertices[5] = 0.0f;
+    vertices[6] = 1.0f; vertices[7] = 0.0f; vertices[8] = 1.0f;
 
-    return vertices;  // Возвращаем указатель на выделенную память
+    vertices[9] = 1.0f; vertices[10] = 0.0f; vertices[11] = 0.0f;
+
+    return vertices;
+}
+
+unsigned int* returnTringleIndex(){
+    unsigned int* index = (unsigned int*)malloc((3 * 2) * sizeof(unsigned int));
+    if (index == NULL) return NULL;
+
+    index[0] = 0; index[1] = 1; index[2] = 2;
+    index[3] = 2; index[4] =3; index[5] = 0;
+
+    return index;
 }
 
 //---------------------------------SHADERS---------------------------------
@@ -121,14 +124,14 @@ unsigned int shaderTransfear(){
     glGenBuffers(1, &pointsVBO);
     glBindBuffer(GL_ARRAY_BUFFER, pointsVBO); //make VBO active (my buffer)
     float* verticesPoint = returnTringlePoints();
-    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(float), verticesPoint, GL_STATIC_DRAW); //give to gpu data of positions
+    glBufferData(GL_ARRAY_BUFFER, (9 + 3) * sizeof(float), verticesPoint, GL_STATIC_DRAW); //give to gpu data of positions
 
     //colors
     unsigned int colorsVBO;
     glGenBuffers(1, &colorsVBO);
     glBindBuffer(GL_ARRAY_BUFFER, colorsVBO); //make VBO active (my buffer)
     float* verticesColor = returnTringleCollor();
-    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(float), verticesColor, GL_STATIC_DRAW); //give to gpu data of collors
+    glBufferData(GL_ARRAY_BUFFER, (9 + 3) * sizeof(float), verticesColor, GL_STATIC_DRAW); //give to gpu data of collors
 
     //------------------data processing shaders to gpu------------------
     unsigned int VAO;
@@ -143,12 +146,20 @@ unsigned int shaderTransfear(){
     glBindBuffer(GL_ARRAY_BUFFER, colorsVBO);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL); //make data
 
+    return VAO;
 }
 
-void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrributes object
+void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrributes object EBO element buffer object
 
     unsigned int shaderProgram = shaderTransferAndUnion();
     unsigned int VAO = shaderTransfear();
+
+    //------------------indexing bufers------------------
+    unsigned int EBO; 
+    glGenBuffers(1, &EBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO); 
+    unsigned int* index = returnTringleIndex();
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, (3 * 2) * sizeof(unsigned int), index, GL_STATIC_DRAW); //give to gpu data of positions
 
     while(!glfwWindowShouldClose(window)){
         //inputs
@@ -160,7 +171,9 @@ void rendering(GLFWwindow* window){//VBO vertex buffer object VAO vertex atrribu
 
         glUseProgram(shaderProgram);//use shader
         glBindVertexArray(VAO);//use vertex atrributes object #10 objects 10 vao
-        glDrawArrays(GL_TRIANGLES, 0, 3); //draw VAO
+        //glDrawArrays(GL_TRIANGLES, 0, 3); //draw VAO
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); //draw with EBO
+        glBindVertexArray(0);//unbind VAO
 
         //double buffering
         glfwSwapBuffers(window);

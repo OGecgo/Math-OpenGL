@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Oct 17 18:55:05 2024
+# Make data base, printed on Fri Oct 18 01:22:41 2024
 
 # Variables
 
@@ -85,7 +85,7 @@ JENV_FORCEJDKHOME = true
 # environment
 MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
 # environment
-GNOME_TERMINAL_SERVICE = :1.99
+GNOME_TERMINAL_SERVICE = :1.97
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -113,13 +113,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 5613
+VSCODE_PID = 5645
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3884,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3884
+SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3964,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3964
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,7 +153,7 @@ SHLVL = 1
 # environment
 JENV_LOADED = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a081c3c9_cd68_4757_bd81_43125017b0fc
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c7fe2332_1d6c_45fb_8381_9a17960dba63
 # environment
 MAKELEVEL := 0
 # default
@@ -217,7 +217,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := test
 # environment
-SYSTEMD_EXEC_PID = 4075
+SYSTEMD_EXEC_PID = 4134
 # environment
 DISPLAY = :1
 # environment
@@ -296,10 +296,10 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 VTE_VERSION = 7600
 # environment
 SNAP_COMMON = /var/snap/code/common
-# default
  
 make: *** No rule to make target 'all'.  Stop.
 
+# default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
 SNAP_USER_DATA = /home/go/snap/code/172
@@ -410,6 +410,6 @@ test: src/Test.o src/glad.o
 # strcache performance: lookups = 31 / hit rate = 32%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/31=0%
-# Finished Make data base on Thu Oct 17 18:55:05 2024
+# Finished Make data base on Fri Oct 18 01:22:41 2024
 
  
