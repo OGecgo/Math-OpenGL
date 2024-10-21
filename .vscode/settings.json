@@ -2,6 +2,10 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
         ".fantomasignore": "ignore",
-        "glfw3.h": "c"
+        "glfw3.h": "c",
+        "resourcemanager.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "shaderprogram.h": "c"
     }
 }

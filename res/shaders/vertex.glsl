@@ -8,4 +8,4 @@ out vec3 ourColor;
 void main(){
    ourColor = aColor;
    gl_Position = vec4(aPos, 1.0);
-}\0";
+};

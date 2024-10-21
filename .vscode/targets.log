@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Oct 18 16:03:43 2024
+# Make data base, printed on Mon Oct 21 20:18:14 2024
 
 # Variables
 
@@ -35,7 +35,7 @@ LC_NAME = el_GR.UTF-8
 # environment
 LC_NUMERIC = el_GR.UTF-8
 # makefile (from 'Makefile', line 3)
-OBJECT = src/Main.o src/glad.o src/renderer/ShaderProgram.o
+OBJECT = src/Main.o src/glad.o src/renderer/ShaderProgram.o res/ResourceManager.o
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
@@ -66,6 +66,8 @@ PWD = /home/go/Desktop/C/Graphics/Math-OpenGL
 XDG_DATA_DIRS = /home/go/snap/code/172/.local/share:/home/go/snap/code/172:/snap/code/172/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 SNAP_EUID = 1000
+# environment
+OLDPWD = /home/go
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -85,7 +87,7 @@ JENV_FORCEJDKHOME = true
 # environment
 MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
 # environment
-GNOME_TERMINAL_SERVICE = :1.95
+GNOME_TERMINAL_SERVICE = :1.184
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -94,8 +96,6 @@ CURDIR := /home/go/Desktop/C/Graphics/Math-OpenGL
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -115,13 +115,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 5530
+VSCODE_PID = 10630
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3857,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3857
+SESSION_MANAGER = local/go-IdeaPad-Gaming-3-15IHU6:@/tmp/.ICE-unix/3911,unix/go-IdeaPad-Gaming-3-15IHU6:/tmp/.ICE-unix/3911
 # automatic
 *F = $(notdir $*)
 # environment
@@ -155,7 +155,7 @@ SHLVL = 1
 # environment
 JENV_LOADED = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/83f1ae42_71d3_4d05_824d_2438e8e86d2b
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/585868be_679c_4c06_a7e5_c0ff92e91bba
 # environment
 MAKELEVEL := 0
 # default
@@ -219,7 +219,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := test
 # environment
-SYSTEMD_EXEC_PID = 4024
+SYSTEMD_EXEC_PID = 4080
 # environment
 DISPLAY = :1
 # environment
@@ -254,8 +254,6 @@ XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG = /etc/xdg/xdg-ubuntu:/etc/xdg
 GDK_PIXBUF_MODULE_FILE = /home/go/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
 GIO_MODULE_DIR = /home/go/snap/code/common/.cache/gio-modules
-# environment
-VSCODE_DOTNET_INSTALL_TOOL_ORIGINAL_HOME = /home/go
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -307,6 +305,7 @@ SNAP_USER_DATA = /home/go/snap/code/172
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
+ 
 GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = el_GR.UTF-8
@@ -315,7 +314,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # environment
 JRE_HOME = /home/go/.jenv/versions/temurin64-21.0.3
 # variable set hash-table stats:
-# Load=151/1024=15%, Rehash=0, Collisions=20/183=11%
+# Load=150/1024=15%, Rehash=0, Collisions=19/182=10%
 
 # Pattern-specific Variable Values
 
@@ -324,9 +323,9 @@ JRE_HOME = /home/go/.jenv/versions/temurin64-21.0.3
 # Directories
 
 # src (device 66306, inode 15743544): No files, no impossibilities so far.
-# . (device 66306, inode 15743160): 7 files, no impossibilities.
+# . (device 66306, inode 15743160): 9 files, no impossibilities.
 
-# 7 files, no impossibilities in 2 directories.
+# 9 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -345,9 +344,15 @@ rungdb:
 	gdb ./$(FILE)
 
 # Not a target:
+res/ResourceManager.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-10-18 16:03:13.865571822
+#  Last modified 2024-10-18 19:50:02.916963176
 #  File has been updated.
 #  Successfully updated.
 
@@ -390,7 +395,7 @@ src/renderer/ShaderProgram.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-test: src/Main.o src/glad.o src/renderer/ShaderProgram.o
+test: src/Main.o src/glad.o src/renderer/ShaderProgram.o res/ResourceManager.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -405,19 +410,19 @@ src/Main.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/24=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 184 B / avg = 8 B
-# current buf: size = 8162 B / used = 184 B / count = 21 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 210 B / avg = 9 B
+# current buf: size = 8162 B / used = 210 B / count = 23 / avg = 9 B
 
-# strcache performance: lookups = 30 / hit rate = 30%
+# strcache performance: lookups = 33 / hit rate = 30%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/30=0%
-# Finished Make data base on Fri Oct 18 16:03:43 2024
+# Load=23/8192=0%, Rehash=0, Collisions=0/33=0%
+# Finished Make data base on Mon Oct 21 20:18:14 2024
 
  

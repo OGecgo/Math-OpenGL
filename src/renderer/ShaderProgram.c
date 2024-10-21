@@ -66,8 +66,4 @@ void destructionShaderProgram(){
 void useShaderProgram(){
     glUseProgram(shaderProgram);
 }
-
-
-
-
-
+ 

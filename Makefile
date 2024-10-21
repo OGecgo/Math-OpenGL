@@ -1,6 +1,6 @@
 EXEC = test
 FILE = $(EXEC)
-OBJECT = src/Main.o src/glad.o src/renderer/ShaderProgram.o
+OBJECT = src/Main.o src/glad.o src/renderer/ShaderProgram.o res/ResourceManager.o
 
 CFLAGS = -g
 OPENGLFLAGS = -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
